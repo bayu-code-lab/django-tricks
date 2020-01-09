@@ -19,6 +19,7 @@ class CustomSelect(forms.widgets.Select):
 #endregion
 
 #region forms.py
+from django import forms
 from . import models
 from . import widgets as customWidget
 
