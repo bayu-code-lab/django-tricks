@@ -28,5 +28,5 @@ class MyForm(forms.ModelForm):
         get_car_variant_color_data = models.MyColorModels.objects.filter(variant=self.instance.color.id, is_deleted=False)
         self.fields['color'] = forms.ModelChoiceField(
             initial=None, queryset=get_car_variant_color_data, 
-            widget=customWidget.CarVariantColorSelect(modify_choices=tuple(get_car_variant_color_data.values_list('id','code', 'color_alias__hex_code', 'color_alias__hex_code_style'))))
+            widget=customWidget.CustomSelect(modify_choices=tuple(get_car_variant_color_data.values_list('id','code', 'color_alias__hex_code', 'color_alias__hex_code_style'))))
 #endregion
